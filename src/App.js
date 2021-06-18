@@ -8,6 +8,7 @@ import Register from './components/register/Register'
 import Header from './components/common/Header';
 import Permission from './components/permission/Permission';
 import PermissionSearch from './components/permission/PermissionSearch';
+import AuthenticatedRoute from './components/login/AuthenticatedRoute';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'jquery/dist/jquery.slim.min.js';
 import 'popper.js/dist/popper.min.js'
@@ -24,9 +25,9 @@ class App extends React.Component {
               <Route exact path='/' render={()=><Redirect to='/login'/>} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
-              <Route exact path='/home' component={Home} />
-              <Route exact path='/permission' component={Permission} />
-              <Route path='/permission/search/' component={PermissionSearch} />
+              <AuthenticatedRoute exact path='/home' component={Home} />
+              <AuthenticatedRoute exact path='/permission' component={Permission} />
+              <AuthenticatedRoute path='/permission/search/' component={PermissionSearch} />
             </div>
           </div>
         </BrowserRouter>

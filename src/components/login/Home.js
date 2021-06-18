@@ -8,7 +8,6 @@ class Home extends React.Component {
 
   constructor() {
     super();
-    sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, "sachin");
   }
 
   render() {
